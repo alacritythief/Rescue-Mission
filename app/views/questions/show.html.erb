@@ -1,0 +1,24 @@
+<h1>Q: <%= @question.title %></h1>
+
+<p><%= @question.description %></p>
+
+<h2>Answers to this question:</h2>
+<% @question.answers.each do |answer| %>
+  <p>
+    <strong>A:</strong>
+    <%= answer.description %>
+  </p>
+<% end %>
+
+<h2>Enter your own answer below:</h2>
+<%= form_for([@question, @question.answers.build]) do |f| %>
+
+
+  <p>
+    <%= f.text_field :description, placeholder: 'This is my amazing answer' %>
+  </p>
+    <%= f.submit 'Answer' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to Questions', questions_path %>

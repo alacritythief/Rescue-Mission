@@ -1,0 +1,25 @@
+<%= form_for @question, html: { class: 'question-form' } do |f| %>
+  <% if @question.errors.any? %>
+  <div id="error_explanation">
+    <h3>Sorry, we couldn't create your question. There were <%= pluralize(@question.errors.count, "error") %></h3>
+    <ul>
+    <% @question.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title, placeholder: 'My awesome question title' %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description, placeholder: 'Enter full question here with description' %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
