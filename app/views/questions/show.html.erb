@@ -2,6 +2,8 @@
 
 <p><%= @question.description %></p>
 
+<%= link_to 'Edit this Question', edit_question_path(@question) %>
+
 <h2>Answers to this question:</h2>
 <% @question.answers.each do |answer| %>
   <p>
@@ -12,7 +14,16 @@
 
 <h2>Enter your own answer below:</h2>
 <%= form_for([@question, @question.answers.build]) do |f| %>
-
+  <% if @question.answers.build.errors.any? %>
+    <div id="error_explanation">
+      <h3>Sorry, invalid answer. There were <%= pluralize(@question.answers.build.errors.count, "error") %></h3>
+      <ul>
+      <% @question.answers.build.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <p>
     <%= f.text_field :description, placeholder: 'This is my amazing answer' %>

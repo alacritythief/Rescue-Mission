@@ -3,14 +3,7 @@ class AnswersController < ApplicationController
   def create
     @question = Question.find(params[:question_id])
     @answer = @question.answers.create(answer_params)
-
-    if @answer.save
-      redirect_to question_path(@question)
-    else
-      redirect_to question_path(@question)
-    end
-
-
+    redirect_to question_path(@question)
   end
 
   private
