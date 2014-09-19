@@ -7,6 +7,10 @@
 <h2>Answers to this question:</h2>
 <%= render @question.answers %>
 
+<% if @question.answers[1] == nil %>
+  <p>There are no answers yet. Make one!</p>
+<% end %>
+
 <h2>Enter your own answer below:</h2>
 <%= form_for([@question, @question.answers.build]) do |f| %>
   <p>

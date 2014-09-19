@@ -1,4 +1,4 @@
-<h1>Editing Question</h1>
+<h1>Editing "<%= @question.title %>"</h1>
 
 <%= form_for :question, url: question_path(@question), method: :patch do |f| %>
   <p>
@@ -16,7 +16,7 @@
   </p>
 <% end %>
 
-<%= link_to 'Delete this Question', question_path(@question),
-                    method: :delete, data: { confirm: 'Are you sure?' } %>
+<p><%= link_to 'Delete this Question', question_path(@question),
+                    method: :delete, data: { confirm: 'Are you sure you want to delete this question?' } %></p>
 
-<%= link_to 'Back', questions_path %>
+<p><%= link_to 'Back', questions_path %></p>

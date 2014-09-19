@@ -1,7 +1,7 @@
 <%= form_for @question, html: { class: 'question-form' } do |f| %>
   <% if @question.errors.any? %>
   <div id="error_explanation">
-    <h3>Sorry, we couldn't create your question. There were <%= pluralize(@question.errors.count, "Error") %></h3>
+    <h3>Sorry, we couldn't create your question. There were <%= pluralize(@question.errors.count, "Error") %>:</h3>
     <ul>
     <% @question.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>
