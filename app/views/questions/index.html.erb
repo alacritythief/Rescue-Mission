@@ -5,10 +5,16 @@
 
   <% @questions.each do |question| %>
 
-    <li><%= link_to question.title, question_path(question) %></li>
+    <li>
+      <%= link_to question.title, question_path(question) %>
+    </li>
 
   <% end %>
 
 </ul>
+
+<% if @questions.empty? == true %>
+  <p>There are no questions yet. Make one!</p>
+<% end %>
 
 <%= link_to 'Ask a Question', new_question_path %>
