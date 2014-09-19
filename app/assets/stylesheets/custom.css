@@ -2,8 +2,13 @@
   display: inline-block;
 }
 
-#title {
-  color: red;
+#title, #title a {
+  text-decoration: none;
+  color: #FF0000;
+}
+
+#title a:hover, a:active {
+  color: #B22222;
 }
 
 #subtitle {
