@@ -1,17 +1,20 @@
-<ul>
+<div class="jumbotron">
+  <h2>Questions:</h2>
 
-  <% @questions.each do |question| %>
+  <ul>
+    <% @questions.each do |question| %>
 
-    <li>
-      <%= link_to question.title, question_path(question) %>
-    </li>
+      <li>
+        <%= link_to question.title, question_path(question) %>
+      </li>
 
+    <% end %>
+
+  </ul>
+
+  <% if @questions.empty? == true %>
+    <p>There are no questions yet. Make one!</p>
   <% end %>
+</div>
 
-</ul>
-
-<% if @questions.empty? == true %>
-  <p>There are no questions yet. Make one!</p>
-<% end %>
-
-<%= link_to 'Ask a Question', new_question_path %>
+<%= link_to 'Ask a Question', new_question_path, class: 'btn btn-primary' %>

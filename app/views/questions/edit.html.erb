@@ -1,18 +1,29 @@
-<h1>Editing "<%= @question.title %>"</h1>
+<h3>Editing: "<%= @question.title %>"</h3>
+
+<% if @question.errors.any? %>
+<div id="error_explanation" class="alert alert-danger">
+  <h3>Sorry, we couldn't edit your question. There were <%= pluralize(@question.errors.count, "reason") %> why:</h3>
+  <ul>
+  <% @question.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
 
 <%= form_for :question, url: question_path(@question), method: :patch do |f| %>
   <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title, placeholder: 'My awesome question title' %>
+    <%= f.label :title %>
+    <%= f.text_field :title, placeholder: 'My awesome question title', class: 'form-control' %>
   </p>
 
   <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description, placeholder: 'Enter full question here with description' %>
+    <%= f.label :description %>
+    <%= f.text_area :description, placeholder: 'Enter full question here with description', class: 'form-control', rows: 10%>
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </p>
 <% end %>
 
