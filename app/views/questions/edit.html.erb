@@ -14,12 +14,12 @@
 <%= form_for :question, url: question_path(@question), method: :patch do |f| %>
   <p>
     <%= f.label :title %>
-    <%= f.text_field :title, placeholder: 'My awesome question title', class: 'form-control' %>
+    <%= f.text_field :title, placeholder: 'My awesome question title (at least 40 characters)', class: 'form-control' %>
   </p>
 
   <p>
     <%= f.label :description %>
-    <%= f.text_area :description, placeholder: 'Enter full question here with description', class: 'form-control', rows: 10%>
+    <%= f.text_area :description, placeholder: 'Enter full question here with description (at least 150 characters)', class: 'form-control', rows: 10 %>
   </p>
 
   <p>
