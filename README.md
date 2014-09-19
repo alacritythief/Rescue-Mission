@@ -1,7 +1,3 @@
-
-
-https://raw.githubusercontent.com/alacritythief/Rescue-Mission/master/screenshots/rescue-mission-01.png
-
 Rescue-Mission
 =============
 
