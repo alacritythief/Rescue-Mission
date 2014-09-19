@@ -6,7 +6,7 @@
 
 
 
-<h2>Answers to this question:</h2>
+<h2><%= @question.answers.count %> Answers to this question:</h2>
 
 <% if @question.answers.empty? == true %>
   <p>There are no answers yet. Make one!</p>
