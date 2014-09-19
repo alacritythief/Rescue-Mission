@@ -1,6 +1,6 @@
 <h1>Q: <%= @question.title %></h1>
 
-<p><%= @question.description %></p>
+<p><%= markdown @question.description %></p>
 
 <p><%= link_to 'Edit this Question', edit_question_path(@question) %></p>
 

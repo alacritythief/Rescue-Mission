@@ -1,6 +1,6 @@
 
 <% if answer.description.length >= 50 %>
-  <p><%= answer.description %></p>
+  <p><%= markdown answer.description %></p>
 
   <p>
     <%= link_to 'Delete this Answer', [answer.question, answer],
